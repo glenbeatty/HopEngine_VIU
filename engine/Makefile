@@ -6,10 +6,10 @@ libHopEngine.a: obj/audio.o obj/hop.o obj/window.o obj/input.o obj/glad.o
 	ar rcs lib/libHopEngine.a obj/audio.o obj/hop.o obj/window.o obj/input.o obj/glad.o
 
 obj/hop.o: src/Hop/hop.cpp ../include/hop.hpp
-	g++ $(SETTINGS) -I src/Input -I src/Window -I ext_lib/glad/ -I ext_lib/GLFW/ -I ../include -I src/Audio -I ext_lib/miniaudio -c src/Hop/hop.cpp -o obj/hop.o
+	g++ $(SETTINGS) -I src/Input -I src/Window -I ext_lib -I ../include -I src/Audio -c src/Hop/hop.cpp -o obj/hop.o
 
 obj/window.o: src/Window/window.cpp src/Window/window.hpp
-	g++ $(SETTINGS) -I src/Window -I ext_lib/glad/ -I src/Input -I ext_lib/GLFW/ -c src/Window/window.cpp -o obj/window.o
+	g++ $(SETTINGS) -I src/Window -I ext_lib -I src/Input -c src/Window/window.cpp -o obj/window.o
 
 obj/input.o: src/Input/input.cpp src/Input/input.hpp
 	g++ $(SETTINGS) -I src/Input -I ext_lib/GLFW -I src/Input -c src/Input/input.cpp -o obj/input.o
