@@ -9,4 +9,4 @@ x: main.cpp
 
 .PHONY: clean
 clean :
-	del $(NAME)
+	del $(NAME).exe
