@@ -5,8 +5,8 @@ I = -I ../../include -I ../../engine/src/Audio -I ../../engine/ext_lib -I ../../
 all: x
 
 x: main.cpp
-	g++ $(I) $(SETTINGS) main.cpp ../../engine/lib/libHopEngine.a -o $(NAME) -L ../../engine/ext_lib/GLFW -lpthread -lm -lglfw3 -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl
+	g++ $(I) $(SETTINGS) main.cpp ../../engine/lib/libHopEngine.a -o $(NAME) -lglfw3 -lopengl32 -lgdi32
 
 .PHONY: clean
 clean :
-	rm $(NAME)
+	del $(NAME)

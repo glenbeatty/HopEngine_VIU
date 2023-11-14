@@ -22,5 +22,5 @@ obj/audio.o: src/Audio/audio.cpp src/Audio/audio.hpp
 
 .PHONY: clean
 clean:
-	rm lib/*.a
-	rm obj/*.o
+	del lib\*.a
+	del obj\*.o
