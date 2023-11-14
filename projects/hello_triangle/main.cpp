@@ -93,7 +93,7 @@ int main()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
     int vertexColorLocation = glGetUniformLocation(shaderProgram, "uniColour");
-    int u_position = glGetUniformLocation(shaderProgram, "pos");
+    int translation = glGetUniformLocation(shaderProgram, "translation");
 
     glUseProgram(shaderProgram);
     // set up vertex data (and buffer(s)) and configure vertex attributes
@@ -137,11 +137,11 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         time_elapsed = glfwGetTime() - initial_time;
-        if(time_elapsed > 1.0){
-            initial_time = initial_time + 1.0;
+        if(time_elapsed > 10){
+            initial_time = initial_time + 10;
         }
         glUniform4f(vertexColorLocation, 0.5f, time_elapsed, 0.5f, 1.0f);
-        glUniform4f(u_position, time_elapsed, time_elapsed, time_elapsed, 1.0f);
+        glUniform4f(translation, time_elapsed*0.1, time_elapsed*0.1, 0.0f, 0.0f);
         // draw our first triangle
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
